@@ -1,28 +1,47 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <date-picker
+      :range="true"
+      :name="'vacation_duration'"
+      :label="'Zeitraum'"
+      :valuerange="{ start: '2021.07.24', end: '2021.07.28' }"
+      :disableddates="['2021.07.09', '2021.07.11']"
+    ></date-picker>
+    <date-picker
+      :range="false"
+      :name="'start_date'"
+      :label="'Startdatum'"
+      :valuesingle="'2021.07.27'"
+      :disableddates="['2021.07.15']"
+    ></date-picker>
+    <test
+      :range="true"
+      :name="'vacation_duration'"
+      :label="'Zeitraum'"
+      :valuerange="{ start: '2021.07.24', end: '2021.07.28' }"
+      :disableddates="['2021.07.09', '2021.07.11']"
+    ></test>
+    <test
+      :range="false"
+      :name="'start_date'"
+      :label="'Startdatum'"
+      :valuesingle="'2021.07.27'"
+      :disableddates="['2021.07.09', '2021.07.11']"
+    ></test>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import DatePicker from "./components/Datepicker.vue";
+import Test from "./components/Test.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    DatePicker,
+    Test,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style src="./assets/tailwind.css" /> 
+
