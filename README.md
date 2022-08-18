@@ -1,4 +1,4 @@
-# vue2-daterange-picker
+# Date picker adapted using vue2-daterange-picker package
 
 ## Project setup
 ```
